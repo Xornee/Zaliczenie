@@ -16,7 +16,7 @@ namespace Data.Entities
 
         [MaxLength(50)]
         [Required]
-        public string Name { get; set; }
+        public string Title { get; set; }
 
         public int Credits { get; set; }
         public int InstructorId { get; set; }

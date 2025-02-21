@@ -28,6 +28,7 @@ namespace Zaliczenie.Services
             if (find != null)
             {
                 _context.Students.Remove(find);
+                _context.SaveChanges();
             }
         }
 
@@ -44,6 +45,7 @@ namespace Zaliczenie.Services
         public void Update(StudentViewModel contact)
         {
             _context.Students.Update(StudentMapper.ToEntity(contact));
+            _context.SaveChanges();
         }
     }
 }

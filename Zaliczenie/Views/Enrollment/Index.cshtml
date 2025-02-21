@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Zaliczenie.Models.EnrollmentViewModel>
+
+@{
+    ViewData["Title"] = "Enrollments";
+}
+
+<h1 class="text-2xl font-bold mb-4">Enrollments</h1>
+
+<p class="mb-4">
+    <a asp-action="Create" class="btn btn-primary">Create New Enrollment</a>
+</p>
+
+<table class="table w-full">
+    <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Student ID</th>
+            <th>Grade</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var enrollment in Model)
+        {
+            <tr>
+                <td>@enrollment.CourseID</td>
+                <td>@enrollment.StudentID</td>
+                <td>@enrollment.Grade</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = enrollment.Id }, new { @class = "link link-primary" }) |
+                    @Html.ActionLink("Details", "Details", new { id = enrollment.Id }, new { @class = "link link-secondary" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = enrollment.Id }, new { @class = "link link-error" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

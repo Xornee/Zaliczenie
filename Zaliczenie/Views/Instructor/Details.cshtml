@@ -1,0 +1,25 @@
+﻿@model Zaliczenie.Models.InstructorViewModel
+
+@{
+    ViewData["Title"] = "Instructor Details";
+}
+
+<div class="card w-full max-w-md bg-base-100 shadow-xl mx-auto mt-8">
+    <div class="card-body">
+        <h2 class="card-title text-2xl font-bold mb-4">Instructor Details</h2>
+
+        <div class="mb-2">
+            <span class="font-semibold">Name:</span>
+            <span>@Model.Name</span>
+        </div>
+        <div class="mb-2">
+            <span class="font-semibold">Academic Title:</span>
+            <span>@Model.AcademicTitle</span>
+        </div>
+
+        <div class="card-actions justify-end mt-4">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>

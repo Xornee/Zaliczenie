@@ -5,9 +5,11 @@ using Zaliczenie.Mappers;
 using Zaliczenie.Models;
 using Zaliczenie.Services;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Zaliczenie.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class StudentController : Controller
     {
         private readonly IStudentService _studentService;
@@ -19,6 +21,7 @@ namespace Zaliczenie.Controllers
 
         // GET: /Student/
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var students = _studentService.FindAll();

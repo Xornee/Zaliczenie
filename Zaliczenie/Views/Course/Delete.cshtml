@@ -1,0 +1,29 @@
+﻿@model Zaliczenie.Models.CourseViewModel
+
+@{
+    ViewData["Title"] = "Delete Course";
+}
+
+<h1 class="text-2xl font-bold mb-4">Delete Course</h1>
+
+<div class="card w-full max-w-md bg-base-100 shadow-xl mx-auto mt-8">
+    <div class="card-body">
+        <p>Are you sure you want to delete the following course?</p>
+        <div class="mb-2">
+            <strong>Title:</strong> @Model.Title
+        </div>
+        <div class="mb-2">
+            <strong>Credits:</strong> @Model.Credits
+        </div>
+        <div class="mb-2">
+            <strong>Instructor Id:</strong> @Model.InstructorId
+        </div>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="mt-4 card-actions justify-end">
+                <button type="submit" class="btn btn-error">Delete</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

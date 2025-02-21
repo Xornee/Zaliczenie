@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Zaliczenie.Models.CourseViewModel>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<h1 class="text-2xl font-bold mb-4">Courses</h1>
+
+<p class="mb-4">
+    <a asp-action="Create" class="btn btn-primary">Create New Course</a>
+</p>
+
+<table class="table w-full">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Credits)</th>
+            <th>@Html.DisplayNameFor(model => model.InstructorId)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => course.Title)</td>
+                <td>@Html.DisplayFor(m => course.Credits)</td>
+                <td>@Html.DisplayFor(m => course.InstructorId)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = course.Id }, new { @class = "link link-primary" }) |
+                    @Html.ActionLink("Details", "Details", new { id = course.Id }, new { @class = "link link-secondary" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = course.Id }, new { @class = "link link-error" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

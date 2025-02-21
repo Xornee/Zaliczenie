@@ -1,0 +1,41 @@
+﻿@model Zaliczenie.Models.CourseViewModel
+
+@{
+    ViewData["Title"] = "Create Course";
+}
+
+<h1 class="text-2xl font-bold mb-4">Create Course</h1>
+
+<div class="flex justify-center">
+    <div class="w-full max-w-md">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-red-500 mb-4"></div>
+
+            <div class="mb-4">
+                <label asp-for="Title" class="block font-medium mb-1"></label>
+                <input asp-for="Title" class="input input-bordered w-full" />
+                <span asp-validation-for="Title" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="Credits" class="block font-medium mb-1"></label>
+                <input asp-for="Credits" class="input input-bordered w-full" type="number" />
+                <span asp-validation-for="Credits" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="InstructorId" class="block font-medium mb-1"></label>
+                <input asp-for="InstructorId" class="input input-bordered w-full" type="number" />
+                <span asp-validation-for="InstructorId" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div class="mb-4">
+                <input type="submit" value="Create" class="btn btn-primary w-full" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Index" class="text-blue-500 hover:underline">Back to List</a>
+</div>

@@ -1,0 +1,26 @@
+﻿@model Zaliczenie.Models.InstructorViewModel
+
+@{
+    ViewData["Title"] = "Delete Instructor";
+}
+
+<h1 class="text-2xl font-bold mb-4">Delete Instructor</h1>
+
+<div class="card w-full max-w-md bg-base-100 shadow-xl mx-auto mt-8">
+    <div class="card-body">
+        <p>Are you sure you want to delete the following instructor?</p>
+        <div class="mb-2">
+            <strong>Name:</strong> @Model.Name
+        </div>
+        <div class="mb-2">
+            <strong>Academic Title:</strong> @Model.AcademicTitle
+        </div>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="mt-4 card-actions justify-end">
+                <button type="submit" class="btn btn-error">Delete</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

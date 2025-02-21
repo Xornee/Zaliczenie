@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Zaliczenie.Models.InstructorViewModel>
+
+@{
+    ViewData["Title"] = "Instructors";
+}
+
+<h1 class="text-2xl font-bold mb-4">Instructors</h1>
+
+<p class="mb-4">
+    <a asp-action="Create" class="btn btn-primary">Create New Instructor</a>
+</p>
+
+<table class="table w-full">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.AcademicTitle)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var instructor in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => instructor.Name)</td>
+                <td>@Html.DisplayFor(m => instructor.AcademicTitle)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = instructor.Id }, new { @class = "link link-primary" }) |
+                    @Html.ActionLink("Details", "Details", new { id = instructor.Id }, new { @class = "link link-secondary" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = instructor.Id }, new { @class = "link link-error" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

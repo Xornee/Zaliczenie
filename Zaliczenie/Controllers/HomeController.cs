@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Zaliczenie.Models;
 
@@ -15,6 +16,7 @@ namespace Zaliczenie.Controllers
 
         public IActionResult Index()
         {
+            ViewData["LastVisit"] = Response.HttpContext.Items[Middleware.LastVisitMiddleware.CookieName];
             return View();
         }
 

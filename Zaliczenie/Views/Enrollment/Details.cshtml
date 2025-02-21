@@ -1,0 +1,29 @@
+﻿@model Zaliczenie.Models.EnrollmentViewModel
+
+@{
+    ViewData["Title"] = "Enrollment Details";
+}
+
+<div class="card w-full max-w-md bg-base-100 shadow-xl mx-auto mt-8">
+    <div class="card-body">
+        <h2 class="card-title text-2xl font-bold mb-4">Enrollment Details</h2>
+
+        <div class="mb-2">
+            <span class="font-semibold">Course ID:</span>
+            <span>@Model.CourseID</span>
+        </div>
+        <div class="mb-2">
+            <span class="font-semibold">Student ID:</span>
+            <span>@Model.StudentID</span>
+        </div>
+        <div class="mb-2">
+            <span class="font-semibold">Grade:</span>
+            <span>@Model.Grade</span>
+        </div>
+
+        <div class="card-actions justify-end mt-4">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
