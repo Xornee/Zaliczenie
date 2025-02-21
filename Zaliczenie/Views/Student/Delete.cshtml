@@ -1,0 +1,32 @@
+﻿@model Zaliczenie.Models.StudentViewModel
+
+@{
+    ViewData["Title"] = "Delete Student";
+}
+
+<div class="card w-full max-w-md bg-base-100 shadow-xl mx-auto mt-8">
+    <div class="card-body">
+        <h2 class="card-title text-2xl font-bold mb-4">Delete Student</h2>
+        <p>Are you sure you want to delete the following student?</p>
+        <div class="mb-2">
+            <strong>Name:</strong> @Model.Name
+        </div>
+        <div class="mb-2">
+            <strong>Email:</strong> @Model.Email
+        </div>
+        <div class="mb-2">
+            <strong>Index Number:</strong> @Model.IndexNumber
+        </div>
+        <div class="mb-2">
+            <strong>Birth:</strong> @Model.Birth
+        </div>
+        <form asp-action="Delete" method="post">
+            @* Include the ID as a hidden field *@
+            <input type="hidden" asp-for="Id" />
+            <div class="mt-4 card-actions justify-end">
+                <button type="submit" class="btn btn-error">Delete</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="coffee">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Zaliczenie</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Zaliczenie.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-xl" asp-area="" asp-controller="Home" asp-action="Index">
+                    Bajo Kurwa Jajo
+                </a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal p-0">
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Student" asp-action="Index">Students</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Course" asp-action="Index">Courses</a>
+                    </li>
+                                        <li>
+                        <a asp-area="" asp-controller="Instructor" asp-action="Index">Instructors</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Enrollment" asp-action="Index">Enrollments</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="avatar">
+                <div class="ring-primary ring-offset-base-100 w-12 m-2 rounded-full ring ring-offset-2">
+                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-3">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer p-4 bg-base-200 text-base-content">
+        <div class="container mx-auto">
+            &copy; 2025 - Zaliczenie - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- Removed Bootstrap and jQuery scripts -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@model Zaliczenie.Models.StudentViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-2xl font-bold mb-4">Create</h1>
+<h4 class="text-xl mb-2">Student</h4>
+<hr class="mb-6" />
+
+<div class="flex justify-center">
+    <div class="w-full max-w-md">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-red-500 mb-4"></div>
+
+            @* <div class="mb-4"> *@
+            @*     <label asp-for="Id" class="block font-medium mb-1"></label> *@
+            @*     <input asp-for="Id" class="input input-bordered w-full" /> *@
+            @*     <span asp-validation-for="Id" class="text-red-500 text-sm"></span> *@
+            @* </div> *@
+
+            <div class="mb-4">
+                <label asp-for="Name" class="block font-medium mb-1"></label>
+                <input asp-for="Name" class="input input-bordered w-full" />
+                <span asp-validation-for="Name" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="Email" class="block font-medium mb-1"></label>
+                <input asp-for="Email" class="input input-bordered w-full" />
+                <span asp-validation-for="Email" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="IndexNumber" class="block font-medium mb-1"></label>
+                <input asp-for="IndexNumber" class="input input-bordered w-full" />
+                <span asp-validation-for="IndexNumber" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="Birth" class="block font-medium mb-1"></label>
+                <input asp-for="Birth" class="input input-bordered w-full" />
+                <span asp-validation-for="Birth" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div class="mb-4">
+                <input type="submit" value="Create" class="btn btn-primary w-full" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Index" class="text-blue-500 hover:underline">Back to List</a>
+</div>
